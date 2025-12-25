@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const projectsRegistry = {
   yolov8_depth: () => import("@/content/projects/yolov8_depth/details.mdx"),
 } as const;
@@ -22,6 +24,7 @@ export interface ProjectData {
     description: string
     hasThumbnail: boolean
     detailsFileMdx: (() => Promise<any>) | null
+    extra?: React.ReactNode
 }
 
 const projectDetailsMdxComponent = {
@@ -30,6 +33,7 @@ const projectDetailsMdxComponent = {
     [ProjectId.agent_modeling]: () => import("@/content/projects/agent_modeling/details.mdx"),
     [ProjectId.oddengine]: () => import("@/content/projects/oddengine/details.mdx"),
     [ProjectId.terraform]: () => import("@/content/projects/terraform/details.mdx"),
+    [ProjectId.iqa]: () => import("@/content/projects/iqa/details.mdx"),
 }
 
 
@@ -42,7 +46,10 @@ export const projectsList: ProjectData[] = [
     year: "2025",
     tags: ["PyTorch", "Object detection", "Depth estimation", "Dataset preparation", "YOLOv8", "DepthAnythingV2"],
     description: "Implemented YOLOv8 from scratch in pytorch and modified its architecture to add depth estimation, beating SOTA accuracy in parking lot car detection. \n Collected and prepared depth annotated dataset of cars",
-    detailsFileMdx: projectDetailsMdxComponent["yolov8_depth"]
+    detailsFileMdx: projectDetailsMdxComponent["yolov8_depth"],
+    extra: <span className="text-xs" > 
+      Thesis project under guidance of <Link className="underline" href="https://www.sust.edu/departments/cse/faculty/rahmanms@sust.edu">Mohammad Shahidur Rahman</Link>, SUST 
+    </span>
   },
   {
     id: ProjectId.lidar_surrogate,
@@ -52,7 +59,10 @@ export const projectsList: ProjectData[] = [
     year: "Ongoing",
     tags: ["Blender", "GPU Shader", "Mesh manipulation", "Geometry", "Camera Projection", "Vector arithmetic"],
     description: "Building a pipeline from scratch to use clever rasterization pipeline instead of performance heavy raycast to collect LIDAR scan data in simulation environments. Writing an async compute shader that runs along with vertex shader stage to calculate depth of lidar rays",
-    detailsFileMdx: projectDetailsMdxComponent[ProjectId.lidar_surrogate]
+    detailsFileMdx: projectDetailsMdxComponent[ProjectId.lidar_surrogate],
+    extra: <span className="text-xs" > 
+      Under guidance of <Link className="underline" href="https://www.umtri.umich.edu/people/arpan-kusari/">Arpan Kusari</Link>, University of Michigan 
+    </span>
   },
   {
     id: ProjectId.agent_modeling,
@@ -67,12 +77,12 @@ export const projectsList: ProjectData[] = [
   {
     id: ProjectId.iqa,
     hasThumbnail: false,
-    title: "Holistic Robustness Evaluation for NR-IQA Models under MOS-Stratified Perturbations",
+    title: "Adversarial Robustness Evaluation for NR-IQA Models under MOS-Stratified Perturbations",
     contributors: ["R. Hassan", "A. Nabil", "I. Sahan", "I. Rahman"],
     year: "Ongoing",
     tags: ["Pytorch", "Projected Gradient Descent(PGD)", "Benchmarking"],
     description: "Conducted a comprehensive robustness evaluation of no-reference image quality assessment (NR-IQA) models under MOS-stratified perturbations. Developed metrics and testing strategies to measure performance across varying image distortions and subjective quality strata. Demonstrated insights on model stability and reliability for real-world applications in computer vision and multimedia analytics.\n Designed robust benchmarking framework for NR-IQA models.",
-    detailsFileMdx: null
+    detailsFileMdx: projectDetailsMdxComponent[ProjectId.iqa]
   },
   {
     id: ProjectId.oddengine,
@@ -92,7 +102,8 @@ export const projectsList: ProjectData[] = [
     year: "2023",
     tags: ["GCP", "Docker", "CI/CD", "Monitoring", "Serverless"],
     description: "Used Terraform to automate building docker images (GCP Cloud Build) and deploying it to GCP Cloud run, Integrated Sentry for production monitoring",
-    detailsFileMdx: projectDetailsMdxComponent[ProjectId.terraform]
+    detailsFileMdx: projectDetailsMdxComponent[ProjectId.terraform],
+    extra: <span className="text-xs" > Won 3rd prize in DU IIT Devops hackathon, 2023 </span>
   },
   
 ]

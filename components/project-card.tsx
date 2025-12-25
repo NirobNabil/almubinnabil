@@ -25,6 +25,7 @@ export default function ProjectCard({ projectId, clickable }: { projectId: strin
                 </div>
             }
 
+            
             <div className="grow" >
                 <div className="mb-3">
                     <div className="flex justify-between items-start " >
@@ -34,9 +35,9 @@ export default function ProjectCard({ projectId, clickable }: { projectId: strin
                 </div>
 
                 <p className="text-sm mb-4 leading-relaxed">{project.description.split("\n").map( section => 
-                    <>
-                        <span key={section}>{section}</span><br/>
-                    </> 
+                    <span key={section}>
+                        {section}<br/>
+                    </span> 
                 )}</p>
 
                 <div className="flex gap-2 flex-wrap">

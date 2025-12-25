@@ -15,6 +15,10 @@ export default function Hero() {
           </p>
 
           <p className="text-sm leading-relaxed">
+            <span className="brutalist-label">EDUCATION:</span> B.Sc in Computer Science and Engineering, SUST. CGPA - 3.77
+          </p>
+
+          <p className="text-sm leading-relaxed">
             <span className="brutalist-label">RESEARCHER:</span> LiDAR simulation research under the supervision of <a className="underline" href="https://www.umtri.umich.edu/people/arpan-kusari/">Dr. Arpan Kusari</a>, University of Michigan.
           </p>
 

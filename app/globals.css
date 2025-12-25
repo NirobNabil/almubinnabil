@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+body {
+  overflow-y: scroll !important;
+  /* You might need this if you have w-full on the body tag in Tailwind */
+  /* width: 100vw; */ 
+}
+
 :root {
   --background: 255 255 255;
   --foreground: 0 0 0;
