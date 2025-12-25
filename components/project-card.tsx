@@ -32,6 +32,7 @@ export default function ProjectCard({ projectId, clickable }: { projectId: strin
                         <h3 className={`brutalist-heading ${clickable ? 'group-hover:tracking-wider' : ''} transition-all`}>{project.title}</h3>
                         <span className="brutalist-label text-xs">{project.year}</span>
                     </div>
+                    <div className="text-xs" >{project.contributors.join(", ")}</div>
                 </div>
 
                 <p className="text-sm mb-4 leading-relaxed">{project.description.split("\n").map( section => 
