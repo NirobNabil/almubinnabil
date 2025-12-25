@@ -1,0 +1,25 @@
+import Image from "next/image"
+
+# LiDAR Point Generation via compute shaders, bypassing Raycasting in Simulation Environments
+
+> Building a pipeline from scratch to use clever rasterization pipeline instead of performance heavy raycast to collect LIDAR scan data in simulation environments. Writing an async compute shader that runs along with vertex shader stage to calculate depth of lidar rays
+
+> Work in progress
+
+<Br count={2}/>
+
+<Image
+    src="/content/projects/lidar_surrogate/thumbnail.png"
+    width="1000" height="1000"
+    alt="model architecture"
+/>
+<ImageDescription description="visualization of lidar points in blender from the output from our custom pipeline" />
+
+<Br/>
+
+
+Developing a raycasting-free LiDAR point generation pipeline using spherical projection and GPU compute shader that works alongside vertex shading stage. It processes mesh triangles in the shader using a pure function that mathematically calculates the lidar intersection of each ray without accessing any memory or complex BVH traversal, significantly improving performance over raycast techniques. 
+
+<Br />
+
+Our initial CPU (Not GPU) testing showed a remarkable generation of 300,000 points in about 6 seconds. This is a significant improvement over traditional raycasting methods, which can be computationally intensive and slower, especially in complex environments. Porting the algorithm to CUDA is currently underway.

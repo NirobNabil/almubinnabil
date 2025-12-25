@@ -11,7 +11,8 @@ export default function ProjectCard({ projectId, clickable }: { projectId: strin
 
     return (
         <div
-            className={`flex max-md:flex-col brutalist-border p-6 cursor-pointer hover:bg-foreground hover:text-background transition-colors group gap-x-6`}
+            id={`project_${project.id}`}
+            className={`flex max-md:flex-col brutalist-border p-6 ${clickable ? 'cursor-pointer' : ''} hover:bg-foreground hover:text-background transition-colors group gap-x-6`}
         >
             {project.hasThumbnail &&
                 <div className="max-w-60 min-w-60 max-md:max-w-full max-md:min-w-full max-md:w-full flex" >
@@ -32,7 +33,11 @@ export default function ProjectCard({ projectId, clickable }: { projectId: strin
                     </div>
                 </div>
 
-                <p className="text-sm mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-sm mb-4 leading-relaxed">{project.description.split("\n").map( section => 
+                    <>
+                        <span key={section}>{section}</span><br/>
+                    </> 
+                )}</p>
 
                 <div className="flex gap-2 flex-wrap">
                     {project.tags.map((tag) => (
@@ -42,7 +47,7 @@ export default function ProjectCard({ projectId, clickable }: { projectId: strin
                     ))}
                 </div>
 
-                <div className="mt-4 text-xs">CLICK TO EXPAND →</div>
+                {clickable && <div className="mt-4 text-xs">CLICK TO EXPAND →</div> }
             </div>
         </div>
     )

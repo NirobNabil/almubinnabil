@@ -8,7 +8,7 @@ import Navbar from "@/components/navbar"
 const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Al-Mubin Nabil",
   description: "Engineer, Researcher, Problem Solver",
   icons: {
     icon: [

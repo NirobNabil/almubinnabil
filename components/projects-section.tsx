@@ -13,9 +13,12 @@ export default async function ProjectsSection() {
 
       <div className="space-y-4">
         {projectsList.map((project) => (
-          <Link href={`/projects/${project.id}`} key={project.id} className="block">
+          project.detailsFileMdx ? 
+            <Link href={`/projects/${project.id}`} key={project.id} className="block">
+              <ProjectCard key={project.id} projectId={project.id} clickable={project.detailsFileMdx !== null} />
+            </Link>
+            :
             <ProjectCard key={project.id} projectId={project.id} clickable={project.detailsFileMdx !== null} />
-          </Link>
         ))}
       </div>
     </section>

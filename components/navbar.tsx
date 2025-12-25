@@ -15,7 +15,7 @@ export default function Navbar() {
           {/* Logo/Name */}
           <div className="brutalist-title text-lg">
             <a href="/" className="hover:opacity-60 transition-opacity">
-              YOU
+              Nabil
             </a>
           </div>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <details className="group">
               <summary className="cursor-pointer list-none text-lg font-bold">≡</summary>
-              <div className="absolute right-4 top-12 bg-background border border-foreground p-4 space-y-2">
+              <div className="z-50 absolute right-4 top-12 bg-background border border-foreground p-4 space-y-2">
                 {navItems.map((item) => (
                   <a
                     key={item.label}
