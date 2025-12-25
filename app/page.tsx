@@ -5,6 +5,7 @@ import ExperienceSection from "@/components/experience-section"
 import CreativeWorksSection from "@/components/creative-works-section"
 import OpensourceSection from "@/components/opensource-section"
 import ContactSection from "@/components/contact-section"
+import AwardsSection from "@/components/awards-section"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <ProjectsSection />
       <ExperienceSection />
       <OpensourceSection />
+      <AwardsSection />
       <ContactSection />
       {/* <CreativeWorksSection /> */}
     </>

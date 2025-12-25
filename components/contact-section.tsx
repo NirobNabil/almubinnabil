@@ -1,5 +1,6 @@
 import { experienceList } from "@/data/experience-registry";
 import { FacebookIcon, GithubIcon, LinkedinIcon, PhoneIcon } from "lucide-react";
+import Link from "next/link";
 
 
 export default function ContactSection() {
@@ -8,7 +9,7 @@ export default function ContactSection() {
       <h2 className="brutalist-heading mb-12">CONTACT</h2>
 
       <div className="space-y-6">
-        Find my CV at <a href="/content/John_Doe_CV.pdf" className="underline hover:opacity-60 transition-opacity text-nowrap">this link</a>.<br/>
+        Find my CV at <Link href="/content/Resume_Bracu.pdf" className="underline hover:opacity-60 transition-opacity text-nowrap">this link</Link>.<br/>
         <br/>
         You can also reach me at:
         <div className="flex gap-x-4 mt-2 py-2" >
