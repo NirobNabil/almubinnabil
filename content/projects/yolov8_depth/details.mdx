@@ -1,0 +1,101 @@
+import Image from "next/image"
+
+# YOLOv8 with depth estimation for parking spot occupancy detection
+
+> We implemented YOLOv8 from scratch in pytorch and modified its architecture of the Head section and Task Aligned Assigner of YOLOv8 to enable depth estimation. And introduced a novel dataset that adds depth estimation capability for cars in underground parking lots.
+
+<Br count={3}/>
+
+<Image
+    src="/content/projects/yolov8_depth/model_architecture.png"
+    width="800" height="600"
+    alt="model architecture"
+/>
+<ImageDescription description="architecture overview" />
+
+<Br/>
+
+
+We leveraged the backbone of pretrained YOLOv8 models that are already excellent at car detection. We converted the backbone weights of pretrained model to work in our implementation and froze them in training then only trained the modified Head section on our custom dataset for depth estimation. 
+
+<Br/>
+
+### Dataset
+
+<Image
+    src="/content/projects/yolov8_depth/dataset_collection_process.png"
+    width="800" height="400"
+    alt="dataset collection process"
+/>
+<ImageDescription description="dataset collection process" />
+
+<Br count={2}/>
+
+We introduced a novel dataset consisting of **4,264** samples. Focusing on lighting diversity, locations, and camera perspectives to address the limitations of existing datasets. 
+
+**Sources:**
+- Underground parking lots
+    - Brac University
+    - Samsung RnD Institute Bangladesh
+    - Commercial complexes in sylhet
+    - Youtube videos
+- Outdoor parking lots
+    - Roadside parking spaces
+    - Modern eye hospital, dhaka
+
+
+<Br count={2} />
+
+**Depth Extraction:**
+
+<Image
+    src="/content/projects/yolov8_depth/depth_extraction_process.png"
+    width="1600" height="800"
+    alt="depth extraction process"
+/>
+<ImageDescription description="depth extraction process" />
+
+<Br />
+
+
+In our annotation we annotated a separate small bounding box within the main bounding box of car, that represents a point on the car that we can use to calcualte the depth of the car from camera. We then use DepthAnythingV2 model to extract the pixel depth of the small bounding box and assign this pixel depth to the main bounding box of the car. 
+
+<Br count={2} />
+
+**Samples:**
+
+<div className="grid grid-cols-2 gap-2">
+    <div>
+        <Image
+            src="/content/projects/yolov8_depth/2.png"
+            width="400" height="300"
+            alt="dataset sample 1"
+        />
+        <span className="text-sm text-gray-500">CCTV footage from youtube</span>
+    </div>
+    <div>
+        <Image
+            src="/content/projects/yolov8_depth/4.png"
+            width="400" height="300"
+            alt="dataset sample 1"
+        />
+        <span className="text-sm text-gray-500">Sylhet commercial space</span>
+    </div>
+    <div>
+        <Image
+            src="/content/projects/yolov8_depth/8.png"
+            width="400" height="300"
+            alt="dataset sample 1"
+        />
+        <span className="text-sm text-gray-500">Outdoor sample at night</span>
+    </div>
+    <div>
+        <Image
+            src="/content/projects/yolov8_depth/9.png"
+            width="400" height="300"
+            alt="dataset sample 1"
+        />
+        <span className="text-sm text-gray-500">Indoor sample</span>
+    </div>
+    
+</div>
