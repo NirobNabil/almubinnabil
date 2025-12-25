@@ -55,7 +55,7 @@ export const projectsList: ProjectData[] = [
     id: ProjectId.lidar_surrogate,
     hasThumbnail: true,
     title: "Raycast via rasterization",
-    contributors: ["A. Nabil", "I. Sahan"],
+    contributors: ["A. Nabil", "I. Sahan", "A. Kusari"],
     year: "Ongoing",
     tags: ["Blender", "GPU Shader", "Mesh manipulation", "Geometry", "Camera Projection", "Vector arithmetic"],
     description: "Building a pipeline from scratch to use clever rasterization pipeline instead of performance heavy raycast to collect LIDAR scan data in simulation environments. Writing an async compute shader that runs along with vertex shader stage to calculate depth of lidar rays",

@@ -15,7 +15,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     }
 
     return (
-    <div className="content-max-width px-4 pt-10 pb-40" >
+    <div className="content-max-width px-4 pt-10 max-md:pt-4 pb-40" >
         <RenderMdx loader={project.detailsFileMdx} />
     </div>
   )

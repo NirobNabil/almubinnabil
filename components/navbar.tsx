@@ -1,11 +1,11 @@
 "use client"
 
 const navItems = [
-  { label: "PROJECTS", href: "#projects" },
-  { label: "EXPERIENCE", href: "#experience" },
-  { label: "OPENSOURCE", href: "#opensource" },
-  { label: "AWARDS", href: "#awards" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "PROJECTS", href: "/#projects" },
+  { label: "EXPERIENCE", href: "/#experience" },
+  { label: "OPENSOURCE", href: "/#opensource" },
+  { label: "AWARDS", href: "/#awards" },
+  { label: "CONTACT", href: "/#contact" },
 ]
 
 export default function Navbar() {
@@ -37,7 +37,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <details className="group">
               <summary className="cursor-pointer list-none text-lg font-bold">≡</summary>
-              <div className="z-50 absolute right-4 top-12 bg-background border border-foreground p-4 space-y-2">
+              <div className="z-50 absolute right-4 top-12 bg-white border border-foreground p-4 space-y-2">
                 {navItems.map((item) => (
                   <a
                     key={item.label}

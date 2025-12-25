@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="content-max-width px-4 py-20">
+    <section className="content-max-width px-4 py-20 max-md:py-15">
       <div className="space-y-8">
         <div>
           <h1 className="brutalist-title text-5xl mb-4">Al-Mubin Khan Nabil</h1>

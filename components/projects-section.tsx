@@ -9,7 +9,7 @@ export default async function ProjectsSection() {
 
   return (
     <>
-      <section id="projects" className="content-max-width px-4 py-20 border-t border-foreground">
+      <section id="projects" className="content-max-width px-4 py-20 max-md:py-15 border-t border-foreground">
         <h2 className="brutalist-heading mb-12">PROJECTS</h2>
 
         <div className="space-y-4">

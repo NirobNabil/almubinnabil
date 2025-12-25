@@ -3,7 +3,7 @@ import { experienceList } from "@/data/experience-registry";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="content-max-width px-4 py-20 border-t border-foreground">
+    <section id="experience" className="content-max-width px-4 py-20 max-md:py-15 border-t border-foreground">
       <h2 className="brutalist-heading mb-12">WORK EXPERIENCE</h2>
 
       <div className="space-y-6">

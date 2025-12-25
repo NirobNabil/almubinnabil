@@ -3,7 +3,7 @@ import { ArrowBigRightDash, MoveRight } from "lucide-react"
 
 export default function OpensourceSection() {
   return (
-    <section id="opensource" className="content-max-width px-4 py-20 border-t border-foreground">
+    <section id="opensource" className="content-max-width px-4 py-20 max-md:py-15 border-t border-foreground">
       <h2 className="brutalist-heading mb-12">Open source contributions</h2>
 
       <div className="space-y-6">

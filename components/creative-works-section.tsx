@@ -31,7 +31,7 @@ const CREATIVE_WORKS = [
 
 export default function CreativeWorksSection() {
   return (
-    <section id="creative" className="content-max-width px-4 py-20 border-t border-foreground">
+    <section id="creative" className="content-max-width px-4 py-20 max-md:py-15 border-t border-foreground">
       <h2 className="brutalist-heading mb-12">CREATIVE WORKS</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
